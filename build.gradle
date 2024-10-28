@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // MySQL JDBC 드라이버 의존성 추가
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // JUnit 테스트 의존성
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    // Main 클래스 경로 지정
+    mainClass = 'org.example.Main'
+}
